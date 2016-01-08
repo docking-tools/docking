@@ -1,0 +1,2 @@
+docker-plugin:0.16.0
+durable-task:1.3
