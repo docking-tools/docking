@@ -5,3 +5,9 @@ jenkinsmaster:
   - 8080:8080
 sensuserver:
  build: sensu-server
+ ports:
+  - 3000:3000
+  - 4567:4567
+  - 5672:5672
+  - 15672:15672
+
