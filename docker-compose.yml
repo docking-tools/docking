@@ -10,4 +10,8 @@ sensuserver:
   - 4567:4567
   - 5672:5672
   - 15672:15672
+sensuclient:
+ build: sensu-client
+ ports:
+  - 3030:3030
 

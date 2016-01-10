@@ -1,0 +1,11 @@
+{
+  "client": {
+    "name": "sensu-docker-client",
+    "address": "localhost",
+    "subscriptions": [ "test" ],
+    "socket": {
+      "bind":"0.0.0.0",
+      "port":3030
+    }
+  }
+}

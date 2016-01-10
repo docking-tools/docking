@@ -7,7 +7,7 @@ ADD config.json /etc/sensu/config.json
 ADD check_disk.json /etc/sensu/conf.d/check_disk.json
 ADD client.json /etc/sensu/conf.d/client.json
 
-RUN yum install -y wget \
+RUN yum update -y && yum install -y wget \
  && wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm \
  && rpm -Uvh erlang-solutions-1.0-1.noarch.rpm \
  && redhat_release=`cat /etc/redhat-release | awk {'print int($3)'}` \
@@ -25,6 +25,10 @@ ADD uchiwa.json /etc/sensu/uchiwa.json
 ADD rabbitmq.config /etc/rabbitmq/rabbitmq.config
 
 ENV RABBITMQ_LOGS=- RABBITMQ_SASL_LOGS=-
+
+VOLUME /etc/sensu/conf.d
+VOLUME /var/lib/rabbitmq
+VOLUME /data
 
 EXPOSE 3000 4567 5672 15672
 
