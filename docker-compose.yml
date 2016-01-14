@@ -12,6 +12,11 @@ sensuserver:
   - 15672:15672
 sensuclient:
  build: sensu-client
+ environment:
+  - CLIENT_ADDRESS=${HOST_IP}
+  - CLIENT_NAME=sensu-client
+  - SUB=ALL
+  - RABBITMQ_HOST=$SENSU_SERVER
  ports:
   - 3030:3030
 
