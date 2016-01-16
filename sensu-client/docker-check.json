@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "metrics-docker-stats": {
+      "type": "metric",
+      "handlers": ["graphite"], 
+      "command": "/opt/sensu/embedded/bin/metrics-docker-stats.rb -H 192.168.1.22:2375",
+      "interval": 10,
+      "standalone": true
+    }
+  }
+}
