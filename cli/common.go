@@ -1,5 +1,16 @@
 package cli
 
+import (
+	flag "github.com/docker/docker/pkg/mflag"	
+)
+
+// CommonFlags represents flags that are common to both the client and the daemon.
+type CommonFlags struct {
+	FlagSet   *flag.FlagSet
+	PostParse func()
+
+	
+}
 
 // Command is the struct contains command name and description
 type Command struct {
